@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 
 export const UIContext = createContext();
@@ -10,10 +10,18 @@ export const UIProvider = ({ children }) => {
    const [cart, setCart] = useState([]);
    const [showCart, setShowCart] = useState(false);
    const [showLogin, setShowLogin] = useState(false);
-   const [formData, setFormData] = useState({
+   const [formDataLogin, setFormDataLogin] = useState({
       username: "",
       password: ""
    });
+   const [formDataRegister, setFormDataRegister] = useState({
+      username: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      address: "",
+      phone: ""
+   })
 
 
    const value = {
@@ -27,8 +35,10 @@ export const UIProvider = ({ children }) => {
       setShowCart,
       showLogin,
       setShowLogin,
-      formData,
-      setFormData
+      formDataLogin,
+      setFormDataLogin,
+      formDataRegister,
+      setFormDataRegister
    }
 
    return <UIContext.Provider value={value} >{ children }</UIContext.Provider>

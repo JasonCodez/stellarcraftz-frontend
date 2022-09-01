@@ -7,7 +7,7 @@ import Cart from './components/cart';
 import Login from './components/login';
 import AppDrawer from './components/drawer';
 import Footer from './components/footer';
-import Products from './components/products';
+import Home from './components/home';
 import SearchBox from './components/search';
 import ShadowBox from './components/products/ShadowBox';
 import Mugs from './components/products/Mugs';
@@ -31,8 +31,8 @@ function App() {
       >  
          <UIProvider>
             <Appbar />
-            <Banner />
             <Routes>
+               <Route path='/' element={<Home />} />
                <Route path='/products/3d-art' element={<ShadowBox />}/>
                <Route path='/products/mugs' element={<Mugs />} />
             </Routes>

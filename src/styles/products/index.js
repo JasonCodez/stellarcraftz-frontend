@@ -35,7 +35,7 @@ export const ProductActionButton = styled(IconButton)(({ theme }) => ({
    },
    margin: 4,
    [theme.breakpoints.down('md')]: {
-      padding: 5,
+      padding: 5,  
    }
 }));
 
@@ -45,6 +45,14 @@ export const ProductFavButton = styled(ProductActionButton, {
    
    color: isFav ? Colors.favorite : Colors.light,
    [theme.breakpoints.up('md')]: {
+      "&:hover": {
+         color: Colors.favorite
+      },
+      position: 'absolute',
+      right: 12,
+      top: -20,
+   },
+   [theme.breakpoints.up('lg')]: {
       "&:hover": {
          color: Colors.favorite
       },
@@ -96,9 +104,18 @@ export const ProductActionWrapper = styled(Box, {
    [theme.breakpoints.up('md')]: {
       display: show ? 'visible' : 'none',
       position: 'absolute',
+      right: 12,
+      top: 28,
+      animation:
+         show && `${slideInRight} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both`,
+   },
+   [theme.breakpoints.up('lg')]: {
+      display: show ? 'visible' : 'none',
+      position: 'absolute',
       right: 20,
       top: 28,
       animation:
          show && `${slideInRight} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both`,
    }
+
 }));
